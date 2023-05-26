@@ -45,7 +45,10 @@ namespace Spawner
         string[] OfficeItems = new string[] { "MotionSensor", "CodeAbecedary", "PartyHat", "RedAccesCard","Head" };
 
         string[] Sewersitems = new string[] { "SewerCanalsKey", "SewerEmergencyKey", "SewerStorageKey",
-            "MetalDetector", "MedallionRat", "MedallionFish", "MedallionParrot", "PetrolCanEmpty","Bucket","Gear","GearLeverHandle" };
+            "MetalDetector", "MedallionRat", "MedallionFish", "MedallionParrot", "PetrolCanEmpty","PetrolCanFilled","Bucket","Gear","GearLeverHandle" };
+
+        string[] terrorhotelitems = new string[] { "Ingot6", "Ingot8", "Ingot10", "StatueFace", "StorageKey", "VyniiDish", "Candle", "BoilerRoomKeys", "Pipe", "CurvedPipe", "MothCoccoon" };
+
         private Rect MainWindow;
        
         public static List<NetworkReparent> NetworkReparent = new List<NetworkReparent>();
@@ -96,11 +99,11 @@ namespace Spawner
             {
                 tab = 0;
             }
-            if (GUILayout.Toggle(tab == 1, "Booster/Assisting", "Button", GUILayout.ExpandWidth(true)))
+            if (GUILayout.Toggle(tab == 1, "Aid", "Button", GUILayout.ExpandWidth(true)))
             {
                 tab = 1;
             }
-            if (GUILayout.Toggle(tab == 2, "Dark/Parking", "Button", GUILayout.ExpandWidth(true)))
+            if (GUILayout.Toggle(tab == 2, "Parking", "Button", GUILayout.ExpandWidth(true)))
             {
                 tab = 2;
             }
@@ -112,6 +115,10 @@ namespace Spawner
             {
                 tab = 4;
             }
+            if (GUILayout.Toggle(tab == 5, "Hotel", "Button", GUILayout.ExpandWidth(true)))
+            {
+                tab = 5;
+            }
             GUILayout.EndHorizontal();
 
 
@@ -122,11 +129,13 @@ namespace Spawner
                 case 0:
                     // Begin a scroll view to allow scrolling through the button list
                     scrollPosition5 = GUILayout.BeginScrollView(scrollPosition5);
+                    GUILayout.BeginVertical(GUI.skin.box);
 
+                  
                     // Create a button for each option in the options array
                     for (int i = 0; i < itemNames.Length; i++)
                     {
-                        if (GUILayout.Button(itemNames[i]))
+                        if (GUILayout.Button(itemNames[i], GUILayout.ExpandWidth(true)))
                         {
                             // Get the selected location from the locations array
                             string selectedLocation = itemNames[i];
@@ -142,16 +151,19 @@ namespace Spawner
                             }
                         }
                     }
+                    GUILayout.EndVertical();
                     GUILayout.EndScrollView();
                     break;
                 case 1:
+                    
+
                     // Begin a scroll view to allow scrolling through the button list
                     scrollPosition5 = GUILayout.BeginScrollView(scrollPosition5);
-
+                    GUILayout.BeginVertical(GUI.skin.box);
                     // Create a button for each option in the options array
                     for (int i = 0; i < Boosteritem.Length; i++)
                     {
-                        if (GUILayout.Button(Boosteritem[i]))
+                        if (GUILayout.Button(Boosteritem[i], GUILayout.ExpandWidth(true)))
                         {
                             // Get the selected location from the locations array
                             string selectedLocation = Boosteritem[i];
@@ -167,17 +179,18 @@ namespace Spawner
                             }
                         }
                     }
+                    GUILayout.EndVertical();
                     GUILayout.EndScrollView();
 
                     break;
                 case 2:
                     // Begin a scroll view to allow scrolling through the button list
                     scrollPosition5 = GUILayout.BeginScrollView(scrollPosition5);
-
+                    GUILayout.BeginVertical(GUI.skin.box);
                     // Create a button for each option in the options array
                     for (int i = 0; i < DarkRoomsParking.Length; i++)
                     {
-                        if (GUILayout.Button(DarkRoomsParking[i]))
+                        if (GUILayout.Button(DarkRoomsParking[i], GUILayout.ExpandWidth(true)))
                         {
                             // Get the selected location from the locations array
                             string selectedLocation = DarkRoomsParking[i];
@@ -194,16 +207,16 @@ namespace Spawner
                         }
                     }
                     GUILayout.EndScrollView();
-
+                    GUILayout.EndVertical();
                     break;
                 case 3:
                     // Begin a scroll view to allow scrolling through the button list
                     scrollPosition5 = GUILayout.BeginScrollView(scrollPosition5);
-
+                    GUILayout.BeginVertical(GUI.skin.box);
                     // Create a button for each option in the options array
                     for (int i = 0; i < OfficeItems.Length; i++)
                     {
-                        if (GUILayout.Button(OfficeItems[i]))
+                        if (GUILayout.Button(OfficeItems[i], GUILayout.ExpandWidth(true)))
                         {
                             // Get the selected location from the locations array
                             string selectedLocation = OfficeItems[i];
@@ -219,16 +232,17 @@ namespace Spawner
                             }
                         }
                     }
+                    GUILayout.EndVertical();
                     GUILayout.EndScrollView();
                     break;
                 case 4:
                     // Begin a scroll view to allow scrolling through the button list
                     scrollPosition5 = GUILayout.BeginScrollView(scrollPosition5);
-
+                    GUILayout.BeginVertical(GUI.skin.box);
                     // Create a button for each option in the options array
                     for (int i = 0; i < Sewersitems.Length; i++)
                     {
-                        if (GUILayout.Button(Sewersitems[i]))
+                        if (GUILayout.Button(Sewersitems[i], GUILayout.ExpandWidth(true)))
                         {
                             // Get the selected location from the locations array
                             string selectedLocation = Sewersitems[i];
@@ -244,6 +258,33 @@ namespace Spawner
                             }
                         }
                     }
+                    GUILayout.EndVertical();
+                    GUILayout.EndScrollView();
+                    break;
+                case 5:
+                    // Begin a scroll view to allow scrolling through the button list
+                    scrollPosition5 = GUILayout.BeginScrollView(scrollPosition5);
+                     GUILayout.BeginVertical(GUI.skin.box);
+                    // Create a button for each option in the options array
+                    for (int i = 0; i < terrorhotelitems.Length; i++)
+                    {
+                        if (GUILayout.Button(terrorhotelitems[i], GUILayout.ExpandWidth(true)))
+                        {
+                            // Get the selected location from the locations array
+                            string selectedLocation = terrorhotelitems[i];
+
+                            foreach (NetworkReparent playert in NetworkReparent)
+                            {
+                                foreach (MiscTest player in MiscTest)
+                                {
+                                    //player.DEVMODE_ENABLED = true;
+                                    player.CmdSpawnItem(selectedLocation, playert.localplayerParent.position);
+
+                                }
+                            }
+                        }
+                    }
+                    GUILayout.EndVertical();
                     GUILayout.EndScrollView();
                     break;
             }
